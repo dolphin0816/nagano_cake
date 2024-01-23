@@ -13,10 +13,13 @@ devise_for :admin, skip: [:registrations, :passwords], controllers: {
   sessions: "admin/sessions"
 }
 
-root to: "homes#top"
+scope module: :public do
+ root to: "homes#top"
+end
 
 namespace :admin do
  root to: "homes#top" 
 end
 
 end
+
